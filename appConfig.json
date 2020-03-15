@@ -1,0 +1,4 @@
+{
+  "applicationModules": ["constructorsandclasses"],
+  "thirdPartyModules": ["lodashModule"]
+}
