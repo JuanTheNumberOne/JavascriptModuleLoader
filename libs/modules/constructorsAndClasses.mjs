@@ -2,10 +2,21 @@ export function constructorsAndClasses() {
   function Person(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
+
+    this.getAge = () => {
+      return 27 + " " + this.firstName;
+    };
   }
 
-  // new creates an empty object, and runs the Person function
-  // with the 'this' pointed to the empty object
-  const juan = new Person("juan ", "zalewski");
-  console.info(juan);
+  Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+  };
+
+  Person.prototype.getShortName = function() {
+    return `${this.firstName}ito`;
+  };
+
+  return {
+    Person: Person
+  };
 }

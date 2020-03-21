@@ -4,6 +4,7 @@
  *  names of the modules are case insensitive
  */
 export const moduleLoader = (function() {
+  console.info(this);
   return async function getModulesToRunFromConfig(
     thirdPartyModules,
     appModules,
@@ -90,6 +91,9 @@ function runModule(module, isThirdParty) {
     console.info(
       `|-------------------------- ${thirdPartyModule} ${moduleText} --------------------------|: ${module.name}`
     );
-    module();
+    const executedModule = module();
+    if (!isThirdParty) {
+      window[module.name] = executedModule;
+    }
   }
 }
