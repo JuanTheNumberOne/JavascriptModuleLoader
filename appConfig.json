@@ -1,4 +1,4 @@
 {
-  "applicationModules": ["constructorsandclasses"],
-  "thirdPartyModules": ["lodashModule"]
+  "applicationModules": [""],
+  "thirdPartyModules": ["lodashModule", "jQueryModule"]
 }
